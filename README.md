@@ -1,3 +1,3 @@
 # alura_php_poo
 alura_php_avancando Projeto para acompanhamento do curso 
-Avançando com PHP: Arrays, Strings, Função e Web.
+Orientação a Objetos com PHP: Classes, métodos e atributos
