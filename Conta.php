@@ -7,19 +7,28 @@ class Conta
     public float $saldo = 0;
 
     public function sacar($valor){
-        if($this->saldo <= $valor){
+        if($this->saldo < $valor) {
             echo "Saldo indisponível";
-        }else{
-            $this->saldo -= $valor;
+            return;
         }
+        $this->saldo -= $valor;
     }
 
     public function depositar($valor){
-        if($valor <= 0){
+        if($valor <= 0) {
             echo "Erro: valor negativo.";
-        }else{
-            $this->saldo += $valor;
+            return;
         }
+        $this->saldo += $valor;
+    }
+
+    public function transferir($contaDestino, $valor){
+        if($this->saldo < $valor){
+            echo "Saldo indisponível";
+            return;
+        }
+        $this->saldo -= $valor;
+        $contaDestino->depositar($valor);
     }
 
 }
