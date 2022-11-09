@@ -6,6 +6,13 @@ class Conta
     private string $nomeTitular;
     private float $saldo = 0;
 
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+    }
+
     public function sacar($valor)
     {
         if($this->saldo < $valor) {
