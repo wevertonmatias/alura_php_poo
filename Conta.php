@@ -5,6 +5,7 @@ class Conta
     private string $cpfTitular;
     private string $nomeTitular;
     private float $saldo = 0;
+    private static $numeroDeContas;
 
     public function __construct(string $cpfTitular, string $nomeTitular)
     {
@@ -12,6 +13,8 @@ class Conta
         $this->cpfTitular = $cpfTitular;
         $this->nomeTitular = $nomeTitular;
         $this->saldo = 0;
+
+        self::$numeroDeContas++;
     }
 
     private function validarNome(string $nome): void
@@ -73,5 +76,10 @@ class Conta
     public function mostrarNometitular(string $nome): void
     {
         echo $this->nomeTitular;
+    }
+
+    public static function numeroDeContas(): int
+    {
+        return self::$numeroDeContas . PHP_EOL;
     }
 }

@@ -2,9 +2,8 @@
 
 require_once "Conta.php";
 
-$minhaConta = new Conta();
+$minhaConta = new Conta('Weverton', '111.222.333-44');
+$minhaConta2 = new Conta('Weverton', '111.222.333-44');
+$minhaConta3= new Conta('Weverton', '111.222.333-44');
 
-$minhaConta->depositar(200);
-
-echo $minhaConta->saldo;
-$minhaConta->saldo -= 200;
+echo Conta::numeroDeContas();
