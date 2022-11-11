@@ -17,6 +17,11 @@ class Conta
         self::$numeroDeContas++;
     }
 
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
+    }
+
     private function validarNome(string $nome): void
     {
         if(strlen($nome) < 5){
